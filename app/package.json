@@ -1,0 +1,24 @@
+{
+  "name": "loginneechannel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "aws-login": "aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 228190306294.dkr.ecr.us-east-1.amazonaws.com",
+    "build": "docker build -t user-login-neebytes:latest .",
+    "push": "docker tag user-login-neebytes:latest 228190306294.dkr.ecr.us-east-1.amazonaws.com/neebytes:latest && docker push 228190306294.dkr.ecr.us-east-1.amazonaws.com/neebytes",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1215.0",
+    "bcrypt": "^5.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "password-validator": "^5.3.0",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.3"
+  }
+}
